@@ -1,0 +1,85 @@
+/* elemento html */
+const add_img = document.getElementById('add_img'),
+    midias_list = document.getElementById('midias_list')
+/* elemento html */
+
+const { ipcRenderer } = require("electron");
+const { Sequelize, DataTypes } = require("sequelize");
+const remote = require("@electron/remote");
+
+/* db */
+const path = require("path");
+const appPath = remote.app.getPath("userData");
+const dbFile = path.join(appPath, "dbFile.sqlite");
+const sequelize = new Sequelize({ dialect: "sqlite", storage: dbFile });
+const Imagens = sequelize.define("imagens", { name: { type: DataTypes.STRING }, src: { type: DataTypes.STRING } });
+/* db */
+
+Imagens.sync({ alter: true });
+
+add_img.addEventListener("click", async () => {
+    ipcRenderer.send("addImage");
+});
+
+ipcRenderer.on("addImage", async (events, { name, src }) => {
+    Imagens.create({ name, src })
+        .then((data) => {
+            carregarImgsOnDb();
+        })
+        .catch((e) => {
+            console.log("erro: ", e);
+        });
+});
+
+const carregarImgsOnDb = () => {
+    Imagens.findAll({ raw: true })
+        .then(imgs => {
+            midias_list.innerHTML = '';
+
+            imgs.map(({ name, src, id }) => {
+                midias_list.innerHTML += `<div class="item" data-src="${src}" data-id="${id}">
+                <p class="nome">${name}</p>
+                <img src="${src}" alt="${name}">
+                <br>
+                <div class="deletar" data-id="${id}">APAGAR</div>
+                <div class="play" data-id="${id}">PLAY</div>
+              </div>`;
+            });
+
+            document.querySelectorAll(".deletar")
+                .forEach((deletar) => {
+                    deletar.addEventListener("click", () => apagarImagem(deletar.dataset.id));
+                });
+            document.querySelectorAll(".play")
+                .forEach((play) => {
+                    play.addEventListener("click", () => showImg(play.dataset.id));
+                });
+        })
+        .catch(e => {
+            console.log('erro ao buscar imagens', e);
+        });
+};
+
+const apagarImagem = (id) => {
+    Imagens.destroy({ where: { id } })
+        .then(res => {
+            (res) ? console.log('sucesso') : console.log('ID não exite');
+        })
+        .catch(e => {
+            console.log('falha ao tentar apagar imagem', e);
+        });
+    carregarImgsOnDb();
+};
+
+const showImg = (id) => {
+    Imagens.findOne({ where: { id }, raw: true })
+        .then(img => {
+            ipcRenderer.send('showImg', img)
+        })
+        .catch(e => {
+            console.log('erro ao buscar imagem', e)
+        })
+}
+
+/* init */
+carregarImgsOnDb();

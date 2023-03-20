@@ -1,0 +1,41 @@
+{
+  "name": "sc-imagen-on-second-screen",
+  "productName": "sc-imagen-on-second-screen",
+  "version": "0.2.0-alfa",
+  "description": "My Electron application description",
+  "main": "src/index.js",
+  "icon": "./build/icon.png",
+  "build": {
+    "productName": "SC - Imagen On Second Screen",
+    "appId": "saulotarsobc.sc.imagen.second.screen"
+  },
+  "scripts": {
+    "start-debug": "electron . --trace-warnings > ./app-run.log  2>&1",
+    "start": "electron .",
+    "win": "electron-builder --win",
+    "win-test": "electron-builder --dir --win",
+    "linux-test": "electron-builder --dir --linux",
+    "linux": "electron-builder --linux",
+    "mac": "electron-builder --mac",
+    "publish": "electron-builder --win -p always",
+    "publish-linux": "electron-builder --linux -p always",
+    "postinstall": "electron-builder install-app-deps",
+    "release": "electron-builder",
+    "sass": "sass -w src/view/scss/main.scss src/view/css/main.min.css -s compressed"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Saulo Costa",
+    "email": "saulotarsobc@gmail.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^23.1.4",
+    "electron-builder": "^23.6.0"
+  },
+  "dependencies": {
+    "@electron/remote": "^2.0.9",
+    "sequelize": "^6.29.3",
+    "sqlite3": "^5.1.6"
+  }
+}
