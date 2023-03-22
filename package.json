@@ -7,7 +7,21 @@
   "icon": "./build/icon.png",
   "build": {
     "productName": "SC Imagen On Second Screen",
-    "appId": "saulotarsobc.sc.imagen.second.screen"
+    "appId": "saulotarsobc.sc.imagen.second.screen",
+    "win": {
+      "publish": [
+        "github"
+      ],
+      "publisherName": "Saulo INC",
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "license": "./licence.md",
+      "allowToChangeInstallationDirectory": true
+    }
   },
   "scripts": {
     "start-debug": "electron . --trace-warnings > ./app-run.log  2>&1",
