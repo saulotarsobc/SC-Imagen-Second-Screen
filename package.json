@@ -1,8 +1,7 @@
 {
   "name": "sc-imagen-on-second-screen",
-  "productName": "sc-imagen-on-second-screen",
   "version": "1.0.1",
-  "description": "My Electron application description",
+  "description": "App para exibir imagens numa segunda dela. => App to display images on second screen",
   "main": "src/index.js",
   "icon": "./build/icon.png",
   "build": {
