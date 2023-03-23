@@ -1,6 +1,6 @@
 {
   "name": "sc-imagen-on-second-screen",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "App para exibir imagens numa segunda dela. => App to display images on second screen",
   "main": "src/index.js",
   "icon": "./build/icon.png",
