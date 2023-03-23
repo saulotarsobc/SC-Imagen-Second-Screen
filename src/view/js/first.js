@@ -38,12 +38,17 @@ const carregarImgsOnDb = () => {
 
             imgs.map(({ name, src, id }) => {
                 midias_list.innerHTML += `<div class="item" data-src="${src}" data-id="${id}">
-                <p class="nome">${name}</p>
-                <img src="${src}" alt="${name}">
-                <br>
-                <div class="deletar" data-id="${id}">APAGAR</div>
-                <div class="play" data-id="${id}">PLAY</div>
-              </div>`;
+                <div class="img">
+                  <p class="nome">${name}</p>
+                  <hr style="margin-bottom: 3px; width: 100%;">
+                  <img src="${src}" alt="${name}">
+                </div>
+                <div class="controls">
+                  <div class="play" data-id="${id}">Exibir</div>
+                  <div class="deletar" data-id="${id}">Apagar</div>
+                </div>
+              </div>
+            </div>`;
             });
 
             document.querySelectorAll(".deletar")

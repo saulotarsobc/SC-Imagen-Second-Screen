@@ -1,0 +1,42 @@
+// https://webkit-scroll-gen.sourceforge.net/
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #424242;
+    border: 0px none #ffffff;
+    border-radius: 54px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #303030;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #303030;
+}
+
+::-webkit-scrollbar-track {
+    background: #303030;
+    border: 33px solid #ffffff;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-track:hover {
+    background: #303030;
+}
+
+::-webkit-scrollbar-track:active {
+    background: #303030;
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}

@@ -7,8 +7,10 @@ remoteMain.initialize();
 
 const createWindow = () => {
   main = new BrowserWindow({
-    width: 500,
-    // height: 600,
+    width: 360,
+    minWidth: 360,
+    maxWidth: 360,
+    height: 500,
     autoHideMenuBar: true,
     webPreferences: {
       nodeIntegration: true,
