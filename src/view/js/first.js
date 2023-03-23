@@ -1,7 +1,29 @@
 /* elemento html */
 const add_img = document.getElementById('add_img'),
-    midias_list = document.getElementById('midias_list')
+    midias_list = document.getElementById('midias_list'),
+    drop = document.getElementById('drop')
 /* elemento html */
+
+drop.addEventListener('dragover', (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+});
+
+drop.addEventListener('drop', (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    for (const { name, path: src } of e.dataTransfer.files) {
+        console.log(name, path);
+        Imagens.create({ name, src })
+            .then(() => {
+                carregarImgsOnDb();
+            })
+            .catch((e) => {
+                console.log("erro: ", e);
+            });
+    };
+    carregarImgsOnDb();
+});
 
 const { ipcRenderer } = require("electron");
 const { Sequelize, DataTypes } = require("sequelize");
