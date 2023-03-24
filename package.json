@@ -8,7 +8,9 @@
     "productName": "SC Imagen On Second Screen",
     "appId": "saulotarsobc.sc.imagen.second.screen",
     "win": {
-      "publish": ["github"],
+      "publish": [
+        "github"
+      ],
       "publisherName": "Saulo INC",
       "target": "NSIS"
     },
@@ -20,7 +22,9 @@
     "linux": {
       "category": "Utilities",
       "target": "AppImage",
-      "publish": ["github"]
+      "publish": [
+        "github"
+      ]
     },
     "mac": {
       "target": {
@@ -29,7 +33,9 @@
           "universal"
         ]
       },
-      "publish": ["github"]
+      "publish": [
+        "github"
+      ]
     }
   },
   "scripts": {
@@ -46,7 +52,12 @@
     "release": "electron-builder",
     "sass": "sass -w src/view/scss/main.scss src/view/css/main.min.css -s compressed"
   },
-  "keywords": ["jw","jw.org","kingdom-hall","second-screen"],
+  "keywords": [
+    "jw",
+    "jw.org",
+    "kingdom-hall",
+    "second-screen"
+  ],
   "author": {
     "name": "Saulo Costa",
     "email": "saulotarsobc@gmail.com"
@@ -58,6 +69,7 @@
   },
   "dependencies": {
     "@electron/remote": "^2.0.9",
+    "electron-updater": "^5.3.0",
     "sequelize": "^6.29.3",
     "sqlite3": "^5.1.6"
   }

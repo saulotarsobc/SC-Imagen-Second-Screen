@@ -1,5 +1,6 @@
 const { app, BrowserWindow, ipcMain, dialog } = require('electron');
 const path = require('path');
+const { autoUpdater } = require('electron-updater')
 const remoteMain = require("@electron/remote/main");
 
 let main, sec;
@@ -9,7 +10,6 @@ const createWindow = () => {
   main = new BrowserWindow({
     width: 360,
     minWidth: 360,
-    // maxWidth: 360,
     height: 500,
     autoHideMenuBar: true,
     webPreferences: {
@@ -57,6 +57,33 @@ app.on('activate', () => {
   }
 });
 
+autoUpdater.on("error", () => {
+  console.log('error');
+});
+
+autoUpdater.on("update-not-available", () => {
+  console.log('update-not-available')
+});
+
+autoUpdater.on("update-available", () => {
+  console.log('update-available');
+  if (os.platform() == "darwin") {
+    // main.webContents.send("goAhead");
+  } else {
+    autoUpdater.downloadUpdate();
+  }
+});
+
+autoUpdater.on("download-progress", (prog) => {
+  console.log(prog)
+});
+
+autoUpdater.on("update-downloaded", () => {
+  console.log('update-downloaded');
+  setImmediate(() => autoUpdater.quitAndInstall());
+});
+
+autoUpdater.logger = console;
 /* code */
 ipcMain.on('addImage', (event, args) => {
   dialog
@@ -81,3 +108,7 @@ ipcMain.on('addImage', (event, args) => {
 ipcMain.on('showImg', (event, args) => {
   sec.webContents.send('showImg', args);
 });
+
+setTimeout(() => {
+  autoUpdater.checkForUpdates();
+}, 2000);
