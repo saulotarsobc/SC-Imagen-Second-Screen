@@ -4,16 +4,16 @@ const add_img = document.getElementById('add_img'),
     drop = document.getElementById('drop')
 /* elemento html */
 
+/* drag and drop */
 drop.addEventListener('dragover', (e) => {
     e.stopPropagation();
     e.preventDefault();
 });
-
 drop.addEventListener('drop', (e) => {
     e.stopPropagation();
     e.preventDefault();
     for (const { name, path: src } of e.dataTransfer.files) {
-        console.log(name, path);
+        // console.log(name, path);
         Imagens.create({ name, src })
             .then(() => {
                 carregarImgsOnDb();
@@ -24,6 +24,7 @@ drop.addEventListener('drop', (e) => {
     };
     carregarImgsOnDb();
 });
+/* drag and drop */
 
 const { ipcRenderer } = require("electron");
 const { Sequelize, DataTypes } = require("sequelize");
@@ -46,6 +47,7 @@ add_img.addEventListener("click", async () => {
 ipcRenderer.on("addImage", async (events, { name, src }) => {
     Imagens.create({ name, src })
         .then((data) => {
+            // console.log(data);
             carregarImgsOnDb();
         })
         .catch((e) => {

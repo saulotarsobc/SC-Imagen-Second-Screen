@@ -8,18 +8,28 @@
     "productName": "SC Imagen On Second Screen",
     "appId": "saulotarsobc.sc.imagen.second.screen",
     "win": {
-      "publish": [
-        "github"
-      ],
+      "publish": ["github"],
       "publisherName": "Saulo INC",
-      "target": [
-        "nsis"
-      ]
+      "target": "NSIS"
     },
     "nsis": {
       "oneClick": false,
       "license": "./licence.md",
       "allowToChangeInstallationDirectory": true
+    },
+    "linux": {
+      "category": "Utilities",
+      "target": "AppImage",
+      "publish": ["github"]
+    },
+    "mac": {
+      "target": {
+        "target": "dmg",
+        "arch": [
+          "universal"
+        ]
+      },
+      "publish": ["github"]
     }
   },
   "scripts": {
@@ -36,7 +46,7 @@
     "release": "electron-builder",
     "sass": "sass -w src/view/scss/main.scss src/view/css/main.min.css -s compressed"
   },
-  "keywords": [],
+  "keywords": ["jw","jw.org","kingdom-hall","second-screen"],
   "author": {
     "name": "Saulo Costa",
     "email": "saulotarsobc@gmail.com"

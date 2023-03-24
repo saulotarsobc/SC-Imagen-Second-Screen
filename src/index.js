@@ -9,7 +9,7 @@ const createWindow = () => {
   main = new BrowserWindow({
     width: 360,
     minWidth: 360,
-    maxWidth: 360,
+    // maxWidth: 360,
     height: 500,
     autoHideMenuBar: true,
     webPreferences: {
@@ -69,7 +69,7 @@ ipcMain.on('addImage', (event, args) => {
       if (!result.canceled) {
         const filePath = result.filePaths[0];
         const fileName = path.parse(filePath).name;
-        console.log({ name: fileName, src: filePath });
+        // console.log({ name: fileName, src: filePath });
         main.webContents.send('addImage', { name: fileName, src: filePath })
       }
     })
