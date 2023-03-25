@@ -12,6 +12,7 @@ const createWindow = () => {
     minWidth: 360,
     height: 500,
     autoHideMenuBar: true,
+    // transparent: true,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
@@ -83,8 +84,11 @@ autoUpdater.on("update-downloaded", () => {
   setImmediate(() => autoUpdater.quitAndInstall());
 });
 
-autoUpdater.logger = console;
 /* code */
+setTimeout(() => {
+  autoUpdater.checkForUpdates();
+}, 2000);
+
 ipcMain.on('addImage', (event, args) => {
   dialog
     .showOpenDialog({
@@ -108,7 +112,3 @@ ipcMain.on('addImage', (event, args) => {
 ipcMain.on('showImg', (event, args) => {
   sec.webContents.send('showImg', args);
 });
-
-setTimeout(() => {
-  autoUpdater.checkForUpdates();
-}, 2000);

@@ -64,12 +64,12 @@ const carregarImgsOnDb = () => {
                 midias_list.innerHTML += `<div class="item" data-src="${src}" data-id="${id}">
                 <div class="img">
                   <p class="nome">${name}</p>
-                  <hr style="margin-bottom: 3px; width: 100%;">
+                  <!-- <hr style="margin-bottom: 3px; width: 100%;"> -->
                   <img src="${src}" alt="${name}">
                 </div>
                 <div class="controls">
-                  <div class="play" data-id="${id}">Exibir</div>
-                  <div class="deletar" data-id="${id}">Apagar</div>
+                  <div class="play play_deletar" data-id="${id}">Exibir</div>
+                  <div class="deletar play_deletar" data-id="${id}">Apagar</div>
                 </div>
               </div>
             </div>`;

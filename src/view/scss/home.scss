@@ -3,19 +3,21 @@ section#home {
     width: 100%;
     font-family: 'Courier New', Courier, monospace;
     color: white;
+    background-color: #383838;
 
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 
     overflow: hidden;
     padding: 3px;
 
     .controls_1 {
         height: 30px;
-        width: 100%;
-        background-color: #f35a5a;
-        border-radius: 5px;
+        width: 95%;
+        // background-color: #f35a5a;
+        border-radius: 4px;
         margin-bottom: 3px;
 
         display: flex;
@@ -23,52 +25,66 @@ section#home {
         align-items: center;
         justify-content: space-around;
 
-        #drop{
+        border-radius: 10px;
+        background: linear-gradient(45deg, #323232, #3c3c3c);
+        box-shadow: 3px -3px 18px #161616,
+            -3px 3px 18px #5a5a5a;
+
+        #drop {
             height: 25px;
-            min-width:100px;
-            background-color: #a9f56b;
-            border-radius: 5px;
-            border: 1px solid gray;
-            padding: 0 3px;
-            
+            min-width: 100px;
+            // padding: 0 3px;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
+            border-radius: 4px;
+            background: linear-gradient(45deg, #323232, #3c3c3c);
+            box-shadow: 3px -3px 18px #161616,
+                -3px 3px 18px #5a5a5a;
         }
-        
+
         input {
             padding: 0 3px;
-            background-color: #dcdcdc;
             height: 25px;
-            min-width:100px;
-            border-radius: 5px;
-            border: 1px solid gray;
+            min-width: 100px;
+            border-radius: 4px;
             cursor: pointer;
+
+            border: none;
+
+            border-radius: 4px;
+            background: linear-gradient(45deg, #323232, #3c3c3c);
+            box-shadow: 3px -3px 18px #161616,
+                -3px 3px 18px #5a5a5a;
         }
     }
 
     #midias_list {
-        width: 100%;
+        width: 95%;
+
         height: calc(100vh - 40px);
         overflow: scroll;
-        border-radius: 5px;
+        border-radius: 4px;
 
         .item {
             background-color: #4b4b4b;
             margin-top: 10px;
-            border-radius: 5px;
+            border-radius: 4px;
             padding: 3px;
-            width: 100%;
-
-            padding: 10px;
 
             display: flex;
             flex-direction: column;
             align-content: center;
             justify-content: center;
 
-            .img {
+            border-radius: 10px;
+            background: linear-gradient(45deg, #323232, #3c3c3c);
+            box-shadow: 3px -3px 18px #161616,
+                -3px 3px 18px #5a5a5a;
 
+            .img {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -80,10 +96,11 @@ section#home {
                 }
 
                 img {
-                    border-radius: 5px;
+                    border-radius: 4px;
                     width: 200px;
                     height: 100px;
                     object-fit: cover;
+                    // aspect-ratio: 16/9;
                 }
             }
 
@@ -105,19 +122,28 @@ section#home {
                     }
                 }
 
-                .deletar {
-                    background-color: #f35a5a;
-                    width: 150px;
-                    border-radius: 5px;
-                    padding: 2px;
-                    text-align: center;
+                .play_deletar {
+                    color: #fff;
+
+                    border-radius: 10px;
+                    background: linear-gradient(45deg, #323232, #3c3c3c);
+                    box-shadow: 3px -3px 18px #161616,
+                        -3px 3px 18px #5a5a5a;
                 }
 
                 .play {
-                    background-color: #a9f56b;
-                    width: 150px;
-                    border-radius: 5px;
-                    padding: 2px;
+                    // background-color: #a9f56b;
+                    // width: 150px;
+                    border-radius: 4px;
+                    padding: 5px;
+                    text-align: center;
+                }
+
+                .deletar {
+                    // background-color: #f35a5a;
+                    // width: 150px;
+                    border-radius: 4px;
+                    padding: 5px;
                     text-align: center;
                 }
             }
