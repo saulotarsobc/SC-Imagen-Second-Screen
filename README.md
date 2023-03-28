@@ -19,4 +19,3 @@ yarn win;
 ## Referencias
 
 * [Neumorphism.io](https://neumorphism.io)
-*
