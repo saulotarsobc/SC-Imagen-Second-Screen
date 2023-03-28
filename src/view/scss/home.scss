@@ -75,7 +75,7 @@ section#home {
             padding: 10px 0;
 
             display: flex;
-            // flex-direction: column;
+            flex-direction: column;
             align-content: center;
             justify-content: center;
 
@@ -83,77 +83,95 @@ section#home {
             background: linear-gradient(45deg, #323232, #3c3c3c);
             box-shadow: 3px -3px 18px #161616, -3px 3px 18px #5a5a5a;
 
-            .img {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-
-                p {
-                    // text-align: center;
-                    font-size: 14px;
-                }
-
-                img {
-                    border-radius: 4px;
-                    width: 160px;
-                    height: 80px;
-                    object-fit: cover;
-                    // aspect-ratio: 16/9;
-                }
+            .nome {
+                // text-align: center;
+                font-size: 12px;
+                text-align: center;
             }
 
-            .controls {
+            .divisor {
+                height: 3px;
+                width: 100%;
+                background-color: #1f1f1f;
+                margin-bottom: 3px;
+            }
+
+            .wrap {
                 display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-around;
-                padding: 5px 0;
 
-                width: 140px;
+                padding: 0 3px;
 
-                // background-color: rebeccapurple;
-
-                .play_deletar {
-                    height: 50px;
-                    width: 50px;
-                    color: #fff;
-                    cursor: pointer;
-
+                .img {
                     display: flex;
-                    // flex-direction: column;
-                    align-content: center;
+                    flex-direction: column;
+                    align-items: center;
                     justify-content: center;
 
-
-                    border-radius: 50%;
-                    background-color: rebeccapurple;
-                    background: linear-gradient(45deg, #323232, #3c3c3c);
-                    box-shadow: 3px -3px 18px #161616, -3px 3px 18px #5a5a5a;
-
-                    // font-size: 60px;
-
-                    text-align: center;
-
-                    svg {
-                        color: #fff;
-                        height: 100%;
-                        transition: all .2s ease-in;
-                        height: 100%;
+                    
+                    
+                    
+                    img {
+                        border: 1px solid #707070;
+                        border-radius: 4px;
+                        width: 150px;
+                        // height: 80px;
+                        object-fit: cover;
+                        aspect-ratio: 16/9;
                     }
                 }
 
-                // .play {
-                //     // background-color: #a9f56b;
-                //     // width: 150px;
-                //     padding: 5px;
-                //     text-align: center;
-                // }
+                .controls {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-around;
+                    padding: 5px 0;
 
-                // .deletar {
-                //     padding: 5px;
-                //     text-align: center;
-                // }
+                    width: 140px;
+
+                    // background-color: rebeccapurple;
+
+                    .play_deletar {
+                        height: 50px;
+                        width: 50px;
+                        color: #fff;
+                        cursor: pointer;
+
+                        display: flex;
+                        // flex-direction: column;
+                        align-content: center;
+                        justify-content: center;
+
+
+                        border-radius: 50%;
+                        background-color: rebeccapurple;
+                        background: linear-gradient(45deg, #323232, #3c3c3c);
+                        box-shadow: 3px -3px 18px #161616, -3px 3px 18px #5a5a5a;
+
+                        // font-size: 60px;
+
+                        text-align: center;
+
+                        svg {
+                            color: #fff;
+                            height: 100%;
+                            transition: all .2s ease-in;
+                            height: 100%;
+                        }
+                    }
+
+                    // .play {
+                    //     // background-color: #a9f56b;
+                    //     // width: 150px;
+                    //     padding: 5px;
+                    //     text-align: center;
+                    // }
+
+                    // .deletar {
+                    //     padding: 5px;
+                    //     text-align: center;
+                    // }
+                }
             }
         }
     }

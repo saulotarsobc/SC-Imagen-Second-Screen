@@ -2,7 +2,7 @@
 
 App to reproduce exibir on a second screen. => App to display images on second screen.
 
-![1680012554433](image/README/1680012554433.png)
+![1680016588263](image/README/1680016588263.png)
 
 ## Como usar
 

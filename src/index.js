@@ -13,7 +13,6 @@ const createWindow = () => {
     maxWidth: 360,
     height: 500,
     autoHideMenuBar: true,
-    // transparent: true,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
