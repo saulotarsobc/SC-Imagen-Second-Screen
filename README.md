@@ -15,3 +15,8 @@ yarn start;
 yarn win;
 # o .exe estará da pasra 'dist'
 ```
+
+## Referencias
+
+* [Neumorphism.io](https://neumorphism.io)
+*

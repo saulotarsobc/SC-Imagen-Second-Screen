@@ -1,6 +1,6 @@
 section#home {
     min-height: 100vh;
-    width: 100%;
+    width: 100vw;
     font-family: 'Courier New', Courier, monospace;
     color: white;
     background-color: #383838;
@@ -10,13 +10,12 @@ section#home {
     align-items: center;
     justify-content: center;
 
-    overflow: hidden;
+    // overflow: hidden;
     padding: 3px;
 
     .controls_1 {
-        height: 30px;
-        width: 95%;
-        // background-color: #f35a5a;
+        // height: 30px;
+        width: 100%;
         border-radius: 4px;
         margin-bottom: 3px;
 
@@ -25,64 +24,64 @@ section#home {
         align-items: center;
         justify-content: space-around;
 
-        border-radius: 10px;
-        background: linear-gradient(45deg, #323232, #3c3c3c);
-        box-shadow: 3px -3px 18px #161616,
-            -3px 3px 18px #5a5a5a;
+        // background-color: rebeccapurple;
+        padding-top: 8px;
 
-        #drop {
-            height: 25px;
+        #add_img {
+            height: 40px;
             min-width: 100px;
-            // padding: 0 3px;
 
             display: flex;
             align-items: center;
             justify-content: center;
 
-            border-radius: 4px;
-            background: linear-gradient(45deg, #323232, #3c3c3c);
-            box-shadow: 3px -3px 18px #161616,
-                -3px 3px 18px #5a5a5a;
-        }
+            border-radius: 5px;
+            background: linear-gradient(225deg, #2f2f2f, #383838);
+            box-shadow: -7px 7px 14px #232323,
+                7px -7px 14px #454545;
 
-        input {
-            padding: 0 3px;
-            height: 25px;
-            min-width: 100px;
-            border-radius: 4px;
             cursor: pointer;
-
-            border: none;
-
-            border-radius: 4px;
-            background: linear-gradient(45deg, #323232, #3c3c3c);
-            box-shadow: 3px -3px 18px #161616,
-                -3px 3px 18px #5a5a5a;
         }
+
+        #drop {
+            height: 40px;
+            min-width: 100px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 5px;
+            background: linear-gradient(225deg, #2f2f2f, #383838);
+            box-shadow: -7px 7px 14px #232323,
+                7px -7px 14px #454545;
+        }
+
     }
 
     #midias_list {
-        width: 95%;
+        width: 100%;
 
         height: calc(100vh - 40px);
         overflow: scroll;
         border-radius: 4px;
 
+        padding: 0 20px;
+
         .item {
             background-color: #4b4b4b;
-            margin-top: 10px;
+            margin-top: 20px;
             border-radius: 4px;
-            padding: 3px;
+            padding: 10px 0;
 
             display: flex;
-            flex-direction: column;
+            // flex-direction: column;
             align-content: center;
             justify-content: center;
 
             border-radius: 10px;
             background: linear-gradient(45deg, #323232, #3c3c3c);
-            box-shadow: 3px -3px 18px #161616,
-                -3px 3px 18px #5a5a5a;
+            box-shadow: 3px -3px 18px #161616, -3px 3px 18px #5a5a5a;
 
             .img {
                 display: flex;
@@ -92,60 +91,69 @@ section#home {
 
                 p {
                     // text-align: center;
-                    font-size: 18px;
+                    font-size: 14px;
                 }
 
                 img {
                     border-radius: 4px;
-                    width: 200px;
-                    height: 100px;
+                    width: 160px;
+                    height: 80px;
                     object-fit: cover;
                     // aspect-ratio: 16/9;
                 }
             }
 
             .controls {
-
                 display: flex;
                 flex-direction: row;
                 align-items: center;
                 justify-content: space-around;
                 padding: 5px 0;
 
-                div {
-                    color: black;
-                    transition: all .2s ease-in;
+                width: 140px;
+
+                // background-color: rebeccapurple;
+
+                .play_deletar {
+                    height: 50px;
+                    width: 50px;
+                    color: #fff;
                     cursor: pointer;
 
-                    &:hover {
-                        transform: scale(1.04);
+                    display: flex;
+                    // flex-direction: column;
+                    align-content: center;
+                    justify-content: center;
+
+
+                    border-radius: 50%;
+                    background-color: rebeccapurple;
+                    background: linear-gradient(45deg, #323232, #3c3c3c);
+                    box-shadow: 3px -3px 18px #161616, -3px 3px 18px #5a5a5a;
+
+                    // font-size: 60px;
+
+                    text-align: center;
+
+                    svg {
+                        color: #fff;
+                        height: 100%;
+                        transition: all .2s ease-in;
+                        height: 100%;
                     }
                 }
 
-                .play_deletar {
-                    color: #fff;
+                // .play {
+                //     // background-color: #a9f56b;
+                //     // width: 150px;
+                //     padding: 5px;
+                //     text-align: center;
+                // }
 
-                    border-radius: 10px;
-                    background: linear-gradient(45deg, #323232, #3c3c3c);
-                    box-shadow: 3px -3px 18px #161616,
-                        -3px 3px 18px #5a5a5a;
-                }
-
-                .play {
-                    // background-color: #a9f56b;
-                    // width: 150px;
-                    border-radius: 4px;
-                    padding: 5px;
-                    text-align: center;
-                }
-
-                .deletar {
-                    // background-color: #f35a5a;
-                    // width: 150px;
-                    border-radius: 4px;
-                    padding: 5px;
-                    text-align: center;
-                }
+                // .deletar {
+                //     padding: 5px;
+                //     text-align: center;
+                // }
             }
         }
     }

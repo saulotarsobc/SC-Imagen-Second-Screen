@@ -10,6 +10,7 @@ const createWindow = () => {
   main = new BrowserWindow({
     width: 360,
     minWidth: 360,
+    maxWidth: 360,
     height: 500,
     autoHideMenuBar: true,
     // transparent: true,
