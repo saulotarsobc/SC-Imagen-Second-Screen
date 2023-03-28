@@ -1,14 +1,26 @@
 /* elemento html */
 const add_img = document.getElementById('add_img'),
     midias_list = document.getElementById('midias_list'),
-    drop = document.getElementById('drop')
+    drop = document.getElementById('drop'),
+    min = document.getElementById('min'),
+    max = document.getElementById('max'),
+    clo = document.getElementById('clo');
 /* elemento html */
+
+/* window control */
+min.addEventListener('click', () => appControl(0));
+max.addEventListener('click', () => appControl(1));
+clo.addEventListener('click', () => appControl(2)
+);
+const appControl = (command) => ipcRenderer.send('appControl', { command });
+/* window control */
 
 /* drag and drop */
 drop.addEventListener('dragover', (e) => {
     e.stopPropagation();
     e.preventDefault();
 });
+
 drop.addEventListener('drop', (e) => {
     e.stopPropagation();
     e.preventDefault();
@@ -119,7 +131,7 @@ const showImg = (id) => {
         .catch(e => {
             console.log('erro ao buscar imagem', e)
         })
-}
+};
 
 /* init */
 carregarImgsOnDb();

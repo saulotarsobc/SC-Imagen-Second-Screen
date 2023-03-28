@@ -9,9 +9,52 @@ section#home {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    // padding: 3px;
 
-    // overflow: hidden;
-    padding: 3px;
+    #app_control {
+        height: 25px;
+        width: 100%;
+        background-color: #161616;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5px;
+
+        z-index: 2;
+
+        #window_title {
+            -webkit-app-region: drag;
+            width: 100%;
+        }
+
+        #window_control {
+            height: 16px;
+            width: 75px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            div {
+                height: 18px;
+                width: 18px;
+                border-radius: 50%;
+            }
+
+            #min {
+                background-color: #ffff6b;
+            }
+
+            #max {
+                background-color: #6060ff;
+            }
+
+            #clo {
+                background-color: #ff6666;
+            }
+        }
+    }
 
     .controls_1 {
         // height: 30px;
@@ -30,6 +73,7 @@ section#home {
         #add_img {
             height: 40px;
             min-width: 100px;
+            cursor: pointer;
 
             display: flex;
             align-items: center;
@@ -37,10 +81,8 @@ section#home {
 
             border-radius: 5px;
             background: linear-gradient(225deg, #2f2f2f, #383838);
-            box-shadow: -7px 7px 14px #232323,
-                7px -7px 14px #454545;
+            box-shadow: -7px 7px 14px #232323, 7px -7px 14px #454545;
 
-            cursor: pointer;
         }
 
         #drop {
@@ -53,19 +95,16 @@ section#home {
 
             border-radius: 5px;
             background: linear-gradient(225deg, #2f2f2f, #383838);
-            box-shadow: -7px 7px 14px #232323,
-                7px -7px 14px #454545;
+            box-shadow: -7px 7px 14px #232323, 7px -7px 14px #454545;
         }
 
     }
 
     #midias_list {
         width: 100%;
-
-        height: calc(100vh - 40px);
+        height: calc(100vh - 40px - 20px);
         overflow: scroll;
         border-radius: 4px;
-
         padding: 0 20px;
 
         .item {
@@ -84,7 +123,6 @@ section#home {
             box-shadow: 3px -3px 18px #161616, -3px 3px 18px #5a5a5a;
 
             .nome {
-                // text-align: center;
                 font-size: 12px;
                 text-align: center;
             }
@@ -98,7 +136,8 @@ section#home {
 
             .wrap {
                 display: flex;
-
+                align-items: center;
+                justify-content: space-around;
                 padding: 0 3px;
 
                 .img {
@@ -107,9 +146,6 @@ section#home {
                     align-items: center;
                     justify-content: center;
 
-                    
-                    
-                    
                     img {
                         border: 1px solid #707070;
                         border-radius: 4px;
@@ -126,10 +162,7 @@ section#home {
                     align-items: center;
                     justify-content: space-around;
                     padding: 5px 0;
-
-                    width: 140px;
-
-                    // background-color: rebeccapurple;
+                    width: 150px;
 
                     .play_deletar {
                         height: 50px;
@@ -142,14 +175,11 @@ section#home {
                         align-content: center;
                         justify-content: center;
 
-
                         border-radius: 50%;
                         background-color: rebeccapurple;
                         background: linear-gradient(45deg, #323232, #3c3c3c);
                         box-shadow: 3px -3px 18px #161616, -3px 3px 18px #5a5a5a;
-
                         // font-size: 60px;
-
                         text-align: center;
 
                         svg {
@@ -159,18 +189,6 @@ section#home {
                             height: 100%;
                         }
                     }
-
-                    // .play {
-                    //     // background-color: #a9f56b;
-                    //     // width: 150px;
-                    //     padding: 5px;
-                    //     text-align: center;
-                    // }
-
-                    // .deletar {
-                    //     padding: 5px;
-                    //     text-align: center;
-                    // }
                 }
             }
         }

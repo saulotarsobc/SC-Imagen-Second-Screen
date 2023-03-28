@@ -12,6 +12,7 @@ const createWindow = () => {
     minWidth: 360,
     maxWidth: 360,
     height: 500,
+    frame: false,
     autoHideMenuBar: true,
     webPreferences: {
       nodeIntegration: true,
@@ -76,7 +77,7 @@ autoUpdater.on("update-available", () => {
 });
 
 autoUpdater.on("download-progress", (prog) => {
-  console.log(prog)
+  // console.log(prog);
 });
 
 autoUpdater.on("update-downloaded", () => {
@@ -85,11 +86,15 @@ autoUpdater.on("update-downloaded", () => {
 });
 
 /* code */
-setTimeout(() => {
-  autoUpdater.checkForUpdates();
-}, 2000);
+ipcMain.on('appControl', (event, { command }) => {
+  switch (command) {
+    case 0: main.minimize(); break;
+    case 1: main.isMaximized() ? main.restore() : main.maximize(); break;
+    case 2: app.quit(); break;
+  };
+});
 
-ipcMain.on('addImage', (event, args) => {
+ipcMain.on('addImage', () => {
   dialog
     .showOpenDialog({
       properties: ["openFile"], filters: [
