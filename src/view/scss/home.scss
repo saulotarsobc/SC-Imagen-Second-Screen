@@ -12,7 +12,7 @@ section#home {
     // padding: 3px;
 
     #app_control {
-        height: 25px;
+        // height: 25px;
         width: 100%;
         background-color: #161616;
 
@@ -102,7 +102,7 @@ section#home {
 
     #midias_list {
         width: 100%;
-        height: calc(100vh - 40px - 20px);
+        height: calc(100vh - 40px - 20px - 16px - 3px);
         overflow: scroll;
         border-radius: 4px;
         padding: 0 20px;

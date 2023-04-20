@@ -11,7 +11,7 @@ const createWindow = () => {
     width: 360,
     minWidth: 360,
     maxWidth: 360,
-    height: 500,
+    height: 520,
     frame: false,
     autoHideMenuBar: true,
     webPreferences: {
